@@ -23,6 +23,10 @@
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/sidebar-themes.css">
     <link rel="shortcut icon" type="image/png" href="img/favicon.png" />
+
+
+    <script src="/deveLopment/bootstrap4/js/jquery.min.js"></script>
+    <script src="/deveLopment/bootstrap4/js/bootstrap.min.js"></script>
 </head>
 
 <body>
@@ -362,57 +366,57 @@
                 <hr>
                 <div class="row">
                     <div class="form-group col-md-12">
-                        <h3>Creación de Colegios</h3>
+                        <h3>Ingreso de Colegios</h3>
                         <form>
                           <div class="form-row">
                             <div class="form-group col-md-6">
                               <label for="inputEmail4">Nombre Institución</label>
-                              <input type="text" class="form-control" id="inputEmail4" placeholder="Nombre del colegio o establecimiento">
+                              <input type="text" class="form-control" id="nameInstitution" placeholder="Nombre del colegio o establecimiento">
                             </div>
                             <div class="form-group col-md-6">
                               <label for="inputPassword4">Comuna</label>
-                              <select id="inputState" class="form-control">
-                                <option selected>Seleccionar...</option>
-                                <option>Santiago</option>
-                                <option>La Florida</option>
-                                <option>Maipu</option>
-                                <option>Puente Alto</option>
+                              <select id="commune" class="form-control">
+                                <option value="0" selected>Seleccionar...</option>
+                                <option value="1">Santiago</option>
+                                <option value="2">La Florida</option>
+                                <option value="3">Maipu</option>
+                                <option value="4">Puente Alto</option>
                               </select>
                             </div>
                           </div>
                           <div class="form-group">
                             <label for="inputAddress">Dirección</label>
-                            <input type="text" class="form-control" id="inputAddress" placeholder="Ej: Calle #numero">
+                            <input type="text" class="form-control" id="address" placeholder="Ej: Calle #numero">
                           </div>
                           <div class="form-row">
                             <div class="form-group col-md-4">
                               <label for="inputCity">Telefono</label>
-                              <input type="text" class="form-control" id="inputCity" placeholder="Ej: +562 xxxxxxxx">
+                              <input type="text" class="form-control" id="telePhone" placeholder="Ej: +562 xxxxxxxx">
                             </div>
                             <div class="form-group col-md-4">
                               <label for="inputState">Director</label>
-                              <input type="text" class="form-control" id="inputCity">
+                              <input type="text" class="form-control" id="director" placeholder="Nombre + 2 apellidos">
                             </div>
                             <div class="form-group col-md-4">
                               <label for="inputZip">Correo Director</label>
-                              <input type="email" class="form-control" id="inputZip" placeholder="xxx@mail.com">
+                              <input type="text" class="form-control" id="emailDirector" placeholder="xxx@mail.com">
                             </div>
                           </div>
                           <div class="form-row">
                             <div class="form-group col-md-4">
-                              <label for="inputCity">Correo 1</label>
-                              <input type="text" class="form-control" id="inputCity" placeholder="Ej: +562 xxxxxxxx">
+                              <label for="inputCity">Contacto 1</label>
+                              <input type="text" class="form-control" id="contact" placeholder="Nombre + 2 apellidos">
                             </div>
                             <div class="form-group col-md-4">
-                              <label for="inputState">Contacto 2</label>
-                              <input type="text" class="form-control" id="inputCity">
+                              <label for="inputState">Correo Contacto 1</label>
+                              <input type="text" class="form-control" id="emailContac" placeholder="xxx@mail.com">
                             </div>
                             <div class="form-group col-md-4">
-                              <label for="inputZip">Correo 2</label>
-                              <input type="email" class="form-control" id="inputZip" placeholder="xxx@mail.com">
+                              <label for="inputZip">Telefono Contacto 1</label>
+                              <input type="text" class="form-control" id="telePhoneContact" placeholder="Ej: +562 xxxxxxxx">
                             </div>
                           </div>
-                          <button type="submit" class="btn btn-primary">Crear</button>
+                          <button type="submit" class="btn btn-primary" onClick="createSchool()">Crear Colegio</button>
                         </form>
                     </div>
                 </div>
@@ -436,7 +440,7 @@
     <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="../node_modules/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script> -->
 
-
+    <script src="/deveLopment/bootstrap4/js/javascript.js"></script>
     <script src="js/main.js"></script>
 </body>
 
