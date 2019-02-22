@@ -18,5 +18,7 @@ if ($accion == "createSchool") {
 	$contac = $_POST['contacto'];
 	$emailContac = $_POST['emailContac'];
 	$telePhoneContact = $_POST['telePhoneContact'];
+
+	print_r($_POST);
 }
 ?>
