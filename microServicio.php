@@ -7,8 +7,10 @@ require_once('./conexion.php');
 
 function prueba($nameInstitution,$commune,$address,$telefono,$director,$emailDirector,$contac,$emailContac,$telePhoneContact){
 	
-	$sql = "call createSchool($nameInstitution,$commune,$address,$telefono,$director,$emailDirector,$contac,$emailContac,$telePhoneContact)";  
-	print($sql);
+	
+
+	$exe = mysql_query($conexion, 'CALL createSchool($nameInstitution,$commune,$address,$telefono,$director,$emailDirector,$contac,$emailContac,$telePhoneContact')or die("Query fail: " . mysqli_error());
+	
 }
 
 ?>
