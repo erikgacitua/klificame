@@ -5,13 +5,12 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Responsive sidebar template with sliding effect and dropdown menu based on bootstrap 3">
     <title>Klificame</title>
 
     <!-- Local -->
     <link rel="stylesheet" href="./bootstrap4/css/bootstrap.min.css">
 
-    <!-- using online links -->
+    <!-- using online links 
     
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
         crossorigin="anonymous">
@@ -26,9 +25,24 @@
     <link rel="stylesheet" href="css/sidebar-themes.css">
     <link rel="shortcut icon" type="image/png" href="img/favicon.png" />
 
+    <!-- Scrip <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+        crossorigin="anonymous"></script>
+  
+    <script src="//malihu.github.io/custom-scrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
+
+    <!-- using local scripts -->
+    <!-- <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="../node_modules/popper.js/dist/umd/popper.min.js"></script>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="../node_modules/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script> -->
+
+    <script src="/deveLopment/bootstrap4/js/javascript.js"></script>
+    <script src="js/main.js"></script>
     
-    <script src="/klificame/bootstrap4/js/bootstrap.min.js"></script>
+    <script src="/deveLopment/bootstrap4/js/bootstrap.min.js"></script>
 </head>
 
 <body>
@@ -373,7 +387,7 @@
                           <div class="form-row">
                             <div class="form-group col-md-6">
                               <label for="inputEmail4">Nombre Institución</label>
-                              <input type="text" class="form-control" id="nameInstitution" placeholder="Nombre del colegio o establecimiento">
+                              <input type="text" class="form-control" id="nameInstitution"  data-toggle="tooltip" title="Ingresar Colegio o Institución">
                             </div>
                             <div class="form-group col-md-6">
                               <label for="inputPassword4">Comuna</label>
@@ -388,34 +402,34 @@
                           </div>
                           <div class="form-group">
                             <label for="inputAddress">Dirección</label>
-                            <input type="text" class="form-control" id="address" placeholder="Ej: Calle #numero">
+                            <input type="text" class="form-control" id="address" data-toggle="tooltip" title="Calle o pasaje + numero #xxxx">
                           </div>
                           <div class="form-row">
                             <div class="form-group col-md-4">
                               <label for="inputCity">Telefono</label>
-                              <input type="text" class="form-control" id="telePhone" placeholder="Ej: +562 xxxxxxxx">
+                              <input type="text" class="form-control" id="telePhone" data-toggle="tooltip" title="Ingresa telefono fijo o móvil">
                             </div>
                             <div class="form-group col-md-4">
                               <label for="inputState">Director</label>
-                              <input type="text" class="form-control" id="director" placeholder="Nombre + 2 apellidos">
+                              <input type="text" class="form-control" id="director" data-toggle="tooltip" title="Nombre + 2 Apellidos">
                             </div>
                             <div class="form-group col-md-4">
                               <label for="inputZip">Correo Director</label>
-                              <input type="text" class="form-control" id="emailDirector" placeholder="xxx@mail.com">
+                              <input type="text" class="form-control" id="emailDirector" data-toggle="tooltip" title="Ej: prueba@gmail.com">
                             </div>
                           </div>
                           <div class="form-row">
                             <div class="form-group col-md-4">
                               <label for="inputCity">Contacto 1</label>
-                              <input type="text" class="form-control" id="contact" placeholder="Nombre + 2 apellidos">
+                              <input type="text" class="form-control" id="contact" data-toggle="tooltip" title="Nombre + 2 Apellidos">
                             </div>
                             <div class="form-group col-md-4">
                               <label for="inputState">Correo Contacto 1</label>
-                              <input type="text" class="form-control" id="emailContac" placeholder="xxx@mail.com">
+                              <input type="text" class="form-control" id="emailContac" data-toggle="tooltip" title="Ej: prueba@gmail.com">
                             </div>
                             <div class="form-group col-md-4">
                               <label for="inputZip">Telefono Contacto 1</label>
-                              <input type="text" class="form-control" id="telePhoneContact" placeholder="Ej: +562 xxxxxxxx">
+                              <input type="text" class="form-control" id="telePhoneContact" data-toggle="tooltip" title="Ingresa telefono fijo o móvil">
                             </div>
                           </div>
                         </form>
@@ -429,21 +443,6 @@
     <!-- page-wrapper -->
 
     <!-- using online scripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
-        crossorigin="anonymous"></script>
-    <script src="//malihu.github.io/custom-scrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
-
-    <!-- using local scripts -->
-    <!-- <script src="../node_modules/jquery/dist/jquery.min.js"></script>
-    <script src="../node_modules/popper.js/dist/umd/popper.min.js"></script>
-    <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="../node_modules/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script> -->
-
-    <script src="/klificame/bootstrap4/js/javascript.js"></script>
-    <script src="js/main.js"></script>
 </body>
 
 </html>
