@@ -50,7 +50,7 @@ function createSchool(){
 			console.log("Se callo la wea");
 		});
 		data.success(function(response){
-			console.log(response);
+			alert("Colegio o Institución creada con exito!");
 		});
 	}
 

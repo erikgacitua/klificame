@@ -20,6 +20,6 @@ if ($accion == "createSchool") {
 	$emailContac = $_POST['emailContac'];
 	$telePhoneContact = $_POST['telePhoneContact'];
 
-	 prueba($nameInstitution,$commune,$address,$telefono,$director,$emailDirector,$contac,$emailContac,$telePhoneContact);
+	echo prueba($nameInstitution,$commune,$address,$telefono,$director,$emailDirector,$contac,$emailContac,$telePhoneContact,$conexion);
 }
 ?>

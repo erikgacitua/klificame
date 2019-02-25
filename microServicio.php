@@ -4,13 +4,18 @@ ini_set('display_errors', '1');
 date_default_timezone_set('America/Santiago');
 
 require_once('./conexion.php');
+	
+function prueba($nameInstitution,$commune,$address,$telefono,$director,$emailDirector,$contac,$emailContac,$telePhoneContact,$conexion){
+	
+	try{
+		mysql_query("CALL sp_createSchool('$nameInstitution','$commune','$address','$telefono','$director','$emailDirector','$contac','$emailContac','$telePhoneContact')",$conexion);
 
-function prueba($nameInstitution,$commune,$address,$telefono,$director,$emailDirector,$contac,$emailContac,$telePhoneContact){
-	
-	
+			return true;
 
-	$exe = mysql_query($conexion, 'CALL createSchool($nameInstitution,$commune,$address,$telefono,$director,$emailDirector,$contac,$emailContac,$telePhoneContact')or die("Query fail: " . mysqli_error());
-	
+		} catch (Exception $e){
+			return false;
+		}
+		
 }
 
 ?>
