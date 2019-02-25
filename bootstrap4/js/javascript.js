@@ -2,6 +2,14 @@ $(document).ready(function () {
 
 });
 
+function expressionRegularEmail(valueEmail){
+	
+     valueEmail = valueEmail.toString()
+     patron = /^[\w]+@{1}[\w]+\.+[a-z]{2,3}$/
+     response = patron.test(valueEmail);
+     return response;
+}
+
 //Acciín del botón para crear instituciones o colegios
 function createSchool(){
 	
@@ -34,25 +42,54 @@ function createSchool(){
 	}else if (emailDirector == "") {
 		alert("Favor ingresar correo del director!");
 		$("#emailDirector").focus();
+
+	}else if(emailDirector != "" && expressionRegularEmail(emailDirector) == false){
+		 	
+			alert("Favor ingresar Email con formato correcto. Ej: prueba@mail.com");
+			$("#emailDirector").focus();
+		
 	}else if(contact == ""){
 		alert("Favor ingresar numero de telefono del contacto!");
 		$("#contact").focus();
 	}else if(emailContac == ""){
 		alert("Favor ingresar un correo del contacto!");
 		$("#emailContac").focus();
+	}else if(emailContac != "" && expressionRegularEmail(emailContac) == false){
+
+			alert("Favor ingresar Email con formato correcto. Ej: prueba@mail.com");
+			$("#emailContac").focus();
+
 	}else if(telePhoneContact == ""){
 		alert("Favor ingresar un telefono del contacto!");
 		$("#telePhoneContact").focus();
 	}else{
 
-		var data = $.post("bff.php", { institución: nameInstitution, comuna: commune, direccion: address, telefono: telePhone, director: director, emailDirector: emailDirector, contacto: contact, emailContac: emailContac, telePhoneContact: telePhoneContact, accion: accion});
-		data.error(function(){
-			console.log("Se callo la wea");
-		});
-		data.success(function(response){
-			alert("Colegio o Institución creada con exito!");
+		var data = $.post("bff.php", { 
+										institución: nameInstitution, 
+										comuna: commune, 
+										direccion: address, 
+										telefono: telePhone, 
+										director: director, 
+										emailDirector: emailDirector, 
+										contacto: contact, 
+										emailContac: emailContac, 
+										telePhoneContact: telePhoneContact, 
+										accion: accion}, 
+		function(data, status){
+			if (data == "true") {
+				alert("Colegio o institución fue creado correctamente!");
+				$("#nameInstitution").val("");
+				$("#commune").val("");
+				$("#address").val("");
+				$("#telePhone").val("");
+				$("#director").val("");
+				$("#emailDirector").val("");
+				$("#contact").val("");
+				$("#emailContac").val("");
+				$("#telePhoneContact").val("");
+
+				$("#nameInstitution").focus();
+			}
 		});
 	}
-
-	
 }
