@@ -16,7 +16,6 @@ function prueba($nameInstitution,$commune,$address,$telefono,$director,$emailDir
 		} catch (Exception $e){
 			return "false";
 		}
-		
 }
 
 ?>

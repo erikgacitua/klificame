@@ -6,9 +6,17 @@ $(document).ready(function () {
 function expressionRegularEmail(valueEmail){
 	
      valueEmail = valueEmail.toString()
-     patron = /^[\w]+@{1}[\w]+\.+[a-z]{2,3}$/
+     patron = /^[^@]+@[^@]+\.[a-zA-Z]{2,}$/
      response = patron.test(valueEmail);
      return response;
+}
+
+function expressionRegularTelephon(valueTel){
+
+	valueTel = valueTel.toString()
+	patron = /^[0]?[256789]\d{8}$/
+	response = patron.test(valueTel);
+	return response;
 }
 
 //Acciín del botón para crear instituciones o colegios
@@ -37,6 +45,12 @@ function createSchool(){
 	}else if (telePhone == "") {
 		alert("Favor ingresar numero de telefono del colegio o institución!");
 		$("#telePhone").focus();
+	
+	}else if(telePhone != "" && expressionRegularTelephon(telePhone) == false){
+
+		alert("Favor ingresar un numero de telefono (Móvil o Fijo) correcto. Ej: Fijo 2 12345678, Móvil (5 o 6 o 7 o 8 o 9) 12345678");
+		$("#telePhone").focus();
+
 	}else if (director == "") {
 		alert("Favor ingresar nombre del director!");
 		$("#director").focus();
@@ -63,6 +77,11 @@ function createSchool(){
 	}else if(telePhoneContact == ""){
 		alert("Favor ingresar un telefono del contacto!");
 		$("#telePhoneContact").focus();
+	
+	}else if(telePhoneContact != "" && expressionRegularTelephon(telePhoneContact) == false){
+
+			alert("Favor ingresar un numero de telefono (Móvil o Fijo) correcto. Ej: Fijo 2 12345678, Móvil 9 12345678");
+			$("#telePhoneContact").focus();
 	}else{
 
 		var data = $.post("bff.php", { 
