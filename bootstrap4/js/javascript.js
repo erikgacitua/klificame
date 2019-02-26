@@ -90,6 +90,9 @@ function createSchool(){
 				$("#telePhoneContact").val("");
 
 				$("#nameInstitution").focus();
+			}else{
+				console.log("Error en el ms-createSchool");
+				alert("Se ha producido un problema inesperado, favor intentelo mas tarde.");
 			}
 		});
 	}
